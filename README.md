@@ -50,9 +50,3 @@ Computer Engineering graduate currently pursuing an M.Sc. in High Performance Co
 - **Russian**: Native
 - **English**: B2 (TOEIC Certified)
 
----
-
-### GitHub Activity
-
-![HPC Stats](https://github-readme-stats.vercel.app/api?username=ilyapopovsky&show_icons=true&theme=calm&rank_icon=github)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ilyapopovsky&layout=compact&theme=calm)
