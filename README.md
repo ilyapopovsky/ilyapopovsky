@@ -1,5 +1,5 @@
 # Ilia Popovschii
-**M.Sc. Student in High Performance Computing @ Politecnico di Milano**
+**M.Sc. Student in High Performance Computing Engineering @ Politecnico di Milano**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_LINKEDIN)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:iliapopovschii@gmail.com)
