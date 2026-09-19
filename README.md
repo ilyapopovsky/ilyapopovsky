@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./assets/stars.svg" width="560" alt="Celestial Night Sky" />
-</p>
-
 # Ilia Popovschii
 **M.Sc. Student in High Performance Computing Engineering @ Politecnico di Milano**
 
