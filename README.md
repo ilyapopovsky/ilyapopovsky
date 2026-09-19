@@ -54,7 +54,7 @@ Computer Engineering graduate currently pursuing an M.Sc. in High Performance Co
 
 - **M.Sc. in High Performance Computing** | Politecnico di Milano (Current - 1st Year)
 - **B.Sc. in Computer Engineering** | Politecnico di Milano
-- **Scientific and Technological High School Diploma in Chemistry and Materials** | "Giulio Natta"
+- **Diploma in Chemistry and Materials** | "Giulio Natta" Scientific High School
 
 ---
 
