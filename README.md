@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/stars.svg" width="100%" alt="Starry Sky" />
+  <img src="./assets/stars.svg" width="550" alt="Stars" />
 </p>
 
 # Ilia Popovschii
