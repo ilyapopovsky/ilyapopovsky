@@ -55,6 +55,7 @@ Computer Engineering graduate currently pursuing an M.Sc. in High Performance Co
 - **M.Sc. in High Performance Computing** | Politecnico di Milano (Current - 1st Year)
 - **B.Sc. in Computer Engineering** | Politecnico di Milano
 - **Diploma in Chemistry and Materials** | "Giulio Natta" Scientific High School
+- **Theoretical Lyceum Diploma** | Tiraspol (GPA: 9.5/10)
 
 ---
 
