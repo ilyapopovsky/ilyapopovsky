@@ -36,6 +36,20 @@ Computer Engineering graduate currently pursuing an M.Sc. in High Performance Co
 
 ---
 
+### Featured Projects
+
+- [**AstraLog-HPC: Telemetry Monitoring System**](https://github.com/ilyapopovsky/NedinaPopovschii)
+  - Spacecraft telemetry monitoring prototype developed in C++20 and OpenMP, targeted for the CINECA Galileo100 cluster (*Software Engineering for HPC*).
+  - High-throughput ingestion using memory-mapped I/O (`mmap`), multi-threaded rule evaluation, and asynchronous persistence.
+  - 4-Gate CI/CD pipeline (GitHub Actions) with self-hosted runner integration for Singularity containerization and SLURM job orchestration on HPC.
+
+- [**HPC Profiling Infrastructure**](https://github.com/ilyapopovsky/profile-scripts_Nedina_Popovschii)
+  - Architecture-specific profiling suite to diagnose hardware utilization and performance bottlenecks across CPU and GPU platforms.
+  - **CPU**: Application-wide macro-profiling (Linux `perf`, cache/memory hierarchy, Perfetto timeline traces) and source-level micro-profiling (PAPI C++ APIs, HPCToolkit).
+  - **GPU**: Kernel-level metrics collection and Roofline Model analysis with NVIDIA Nsight Compute and AMD ROCProfiler (validated on molecular docking engines like `muDock`).
+
+---
+
 ### Education
 
 - **M.Sc. in High Performance Computing** | Politecnico di Milano (Current - 1st Year)
