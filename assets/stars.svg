@@ -1,127 +1,100 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 50" width="100%" height="50" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 28" width="450" height="28" fill="none" shape-rendering="crispEdges">
   <defs>
-    <!-- Soft, semi-transparent cosmic aura fading seamlessly to 0% at all edges -->
-    <radialGradient id="softAura" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.36" />
-      <stop offset="45%" stop-color="#0284c7" stop-opacity="0.15" />
-      <stop offset="85%" stop-color="#0f172a" stop-opacity="0.03" />
-      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-    </radialGradient>
+    <!-- 5x5 Pixel Cross Star -->
+    <g id="px-cross">
+      <rect x="2" y="0" width="1" height="5" />
+      <rect x="0" y="2" width="5" height="1" />
+    </g>
 
-    <!-- Faint shooting star gradient trail -->
-    <linearGradient id="softMeteor" x1="100%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
-      <stop offset="40%" stop-color="#38bdf8" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
-    </linearGradient>
-
-    <!-- 4-point anime sparkle -->
-    <g id="sparkle-soft">
-      <path d="M 0,-3.5 Q 0,0 3.5,0 Q 0,0 0,3.5 Q 0,0 -3.5,0 Q 0,0 0,-3.5 Z" />
+    <!-- 3x3 Pixel Plus Star -->
+    <g id="px-plus">
+      <rect x="1" y="0" width="1" height="3" />
+      <rect x="0" y="1" width="3" height="1" />
     </g>
 
     <style>
-      .tw-slow { animation: softTwinkle 3.8s ease-in-out infinite alternate; }
-      .tw-mid { animation: softTwinkle 2.6s ease-in-out infinite alternate; }
-      .tw-fast { animation: softTwinkle 1.9s ease-in-out infinite alternate; }
+      /* 16-bit retro discrete frame animations */
+      .anim-a { animation: stepA 2.6s steps(1) infinite; }
+      .anim-b { animation: stepB 3.4s steps(1) infinite; }
+      .anim-c { animation: stepC 2.0s steps(1) infinite; }
+      .anim-d { animation: stepD 4.2s steps(1) infinite; }
 
-      @keyframes softTwinkle {
-        0% { opacity: 0.15; transform: scale(0.7); }
-        50% { opacity: 0.55; }
-        100% { opacity: 0.95; transform: scale(1.15); }
-      }
-
-      @keyframes meteorGlide {
-        0% {
-          transform: translate(0, 0) scale(0);
-          opacity: 0;
-        }
-        4% {
-          opacity: 0.9;
-          transform: translate(15px, 6px) scale(1);
-        }
-        14% {
-          opacity: 0;
-          transform: translate(120px, 40px) scale(0.3);
-        }
-        100% {
-          opacity: 0;
-          transform: translate(120px, 40px) scale(0);
-        }
-      }
-      .meteor-soft {
-        animation: meteorGlide 8.5s ease-out infinite;
-        transform-origin: 0 0;
-      }
+      @keyframes stepA { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.95; } }
+      @keyframes stepB { 0%, 100% { opacity: 0.9; } 45% { opacity: 0.15; } }
+      @keyframes stepC { 0%, 100% { opacity: 0.15; } 60% { opacity: 0.85; } }
+      @keyframes stepD { 0%, 100% { opacity: 0.85; } 50% { opacity: 0.25; } }
     </style>
   </defs>
 
-  <!-- Completely semi-transparent aura: no box, no border, melts into GitHub background -->
-  <ellipse cx="325" cy="25" rx="300" ry="22" fill="url(#softAura)" />
+  <!-- 100% Transparent Canvas - No borders, no boxes, completely seamless -->
 
-  <!-- Subtle constellation threads -->
-  <g stroke="#38bdf8" stroke-width="0.5" stroke-dasharray="2 3" opacity="0.22">
-    <line x1="130" y1="28" x2="190" y2="17" />
-    <line x1="190" y1="17" x2="255" y2="32" />
-    <line x1="395" y1="18" x2="455" y2="33" />
-    <line x1="455" y1="33" x2="520" y2="17" />
-  </g>
-
-  <!-- 4-point Anime Sparkles -->
-  <g class="tw-slow" fill="#f8fafc" style="transform-origin: 190px 17px; animation-delay: 0.3s;">
-    <use href="#sparkle-soft" x="190" y="17" />
-    <animate attributeName="opacity" values="0.2;0.95;0.2" dur="3.8s" begin="0.3s" repeatCount="indefinite" />
-  </g>
-  <g class="tw-mid" fill="#38bdf8" style="transform-origin: 325px 22px; animation-delay: 1.2s;">
-    <use href="#sparkle-soft" x="325" y="22" />
-    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.6s" begin="1.2s" repeatCount="indefinite" />
-  </g>
-  <g class="tw-slow" fill="#fef08a" style="transform-origin: 455px 33px; animation-delay: 0.7s;">
-    <use href="#sparkle-soft" x="455" y="33" />
-    <animate attributeName="opacity" values="0.25;0.95;0.25" dur="3.4s" begin="0.7s" repeatCount="indefinite" />
-  </g>
-  <g class="tw-mid" fill="#ffffff" style="transform-origin: 520px 17px; animation-delay: 1.8s;">
-    <use href="#sparkle-soft" x="520" y="17" />
-    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.9s" begin="1.8s" repeatCount="indefinite" />
+  <!-- Retro Pixel Crescent Moon (16-bit, soft cream) -->
+  <g fill="#fef08a" opacity="0.9" transform="translate(25, 4)">
+    <rect x="3" y="0" width="4" height="2" />
+    <rect x="1" y="2" width="3" height="2" />
+    <rect x="0" y="4" width="2" height="4" />
+    <rect x="1" y="8" width="3" height="2" />
+    <rect x="3" y="10" width="4" height="2" />
   </g>
 
-  <!-- Twinkling stars (soft white, cyan, warm ember) -->
-  <circle cx="90" cy="26" r="1.1" fill="#38bdf8" class="tw-fast" style="animation-delay: 0.2s;">
-    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.0s" begin="0.2s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="130" cy="28" r="1.2" fill="#ffffff" class="tw-mid" style="animation-delay: 0.8s;">
-    <animate attributeName="opacity" values="0.25;1;0.25" dur="2.8s" begin="0.8s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="255" cy="32" r="1.2" fill="#fde047" class="tw-slow" style="animation-delay: 1.5s;">
-    <animate attributeName="opacity" values="0.2;0.85;0.2" dur="3.6s" begin="1.5s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="290" cy="15" r="0.8" fill="#93c5fd" class="tw-fast" style="animation-delay: 0.5s;">
-    <animate attributeName="opacity" values="0.15;0.75;0.15" dur="2.1s" begin="0.5s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="365" cy="33" r="1.0" fill="#ffffff" class="tw-mid" style="animation-delay: 1.1s;">
-    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.7s" begin="1.1s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="395" cy="18" r="1.2" fill="#38bdf8" class="tw-slow" style="animation-delay: 1.9s;">
-    <animate attributeName="opacity" values="0.25;0.95;0.25" dur="3.7s" begin="1.9s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="560" cy="30" r="1.1" fill="#fde047" class="tw-fast" style="animation-delay: 0.4s;">
-    <animate attributeName="opacity" values="0.2;0.85;0.2" dur="2.2s" begin="0.4s" repeatCount="indefinite" />
-  </circle>
-
-  <!-- Ambient micro-stars -->
-  <g fill="#93c5fd" opacity="0.3">
-    <circle cx="60" cy="20" r="0.5" />
-    <circle cx="160" cy="36" r="0.5" />
-    <circle cx="220" cy="13" r="0.6" />
-    <circle cx="340" cy="14" r="0.5" />
-    <circle cx="430" cy="38" r="0.6" />
-    <circle cx="490" cy="13" r="0.5" />
-    <circle cx="590" cy="22" r="0.5" />
+  <!-- 5x5 Pixel Cross Stars -->
+  <g class="anim-a" fill="#f8fafc" transform="translate(95, 11)">
+    <use href="#px-cross" />
+    <animate attributeName="opacity" values="0.2;0.95;0.2" dur="2.6s" calcMode="discrete" repeatCount="indefinite" />
   </g>
 
-  <!-- Gentle shooting star gliding softly -->
-  <g class="meteor-soft">
-    <line x1="240" y1="11" x2="205" y2="4" stroke="url(#softMeteor)" stroke-width="1.2" stroke-linecap="round" />
-    <circle cx="240" cy="11" r="1.1" fill="#ffffff" />
+  <g class="anim-b" fill="#7dd3fc" transform="translate(225, 9)">
+    <use href="#px-cross" />
+    <animate attributeName="opacity" values="0.9;0.15;0.9" dur="3.4s" calcMode="discrete" repeatCount="indefinite" />
   </g>
+
+  <g class="anim-c" fill="#fef08a" transform="translate(355, 13)">
+    <use href="#px-cross" />
+    <animate attributeName="opacity" values="0.15;0.85;0.15" dur="2.0s" calcMode="discrete" repeatCount="indefinite" />
+  </g>
+
+  <!-- 3x3 Pixel Plus Stars -->
+  <g class="anim-b" fill="#94a3b8" transform="translate(65, 17)">
+    <use href="#px-plus" />
+    <animate attributeName="opacity" values="0.9;0.15;0.9" dur="3.4s" calcMode="discrete" repeatCount="indefinite" />
+  </g>
+
+  <g class="anim-d" fill="#f8fafc" transform="translate(155, 7)">
+    <use href="#px-plus" />
+    <animate attributeName="opacity" values="0.85;0.25;0.85" dur="4.2s" calcMode="discrete" repeatCount="indefinite" />
+  </g>
+
+  <g class="anim-a" fill="#38bdf8" transform="translate(290, 17)">
+    <use href="#px-plus" />
+    <animate attributeName="opacity" values="0.2;0.95;0.2" dur="2.6s" calcMode="discrete" repeatCount="indefinite" />
+  </g>
+
+  <g class="anim-c" fill="#f8fafc" transform="translate(415, 9)">
+    <use href="#px-plus" />
+    <animate attributeName="opacity" values="0.15;0.85;0.15" dur="2.0s" calcMode="discrete" repeatCount="indefinite" />
+  </g>
+
+  <!-- 2x2 Square Pixel Stars -->
+  <rect x="52" y="9" width="2" height="2" fill="#7dd3fc" class="anim-c">
+    <animate attributeName="opacity" values="0.15;0.85;0.15" dur="2.0s" calcMode="discrete" repeatCount="indefinite" />
+  </rect>
+  <rect x="135" y="12" width="2" height="2" fill="#cbd5e1" class="anim-d">
+    <animate attributeName="opacity" values="0.85;0.25;0.85" dur="4.2s" calcMode="discrete" repeatCount="indefinite" />
+  </rect>
+  <rect x="255" y="13" width="2" height="2" fill="#fef08a" class="anim-a">
+    <animate attributeName="opacity" values="0.2;0.95;0.2" dur="2.6s" calcMode="discrete" repeatCount="indefinite" />
+  </rect>
+  <rect x="325" y="21" width="2" height="2" fill="#94a3b8" class="anim-d">
+    <animate attributeName="opacity" values="0.85;0.25;0.85" dur="4.2s" calcMode="discrete" repeatCount="indefinite" />
+  </rect>
+  <rect x="385" y="7" width="2" height="2" fill="#7dd3fc" class="anim-b">
+    <animate attributeName="opacity" values="0.9;0.15;0.9" dur="3.4s" calcMode="discrete" repeatCount="indefinite" />
+  </rect>
+
+  <!-- 1x1 Single Pixel Micro-Stars -->
+  <rect x="120" y="21" width="1" height="1" fill="#f8fafc" class="anim-a" />
+  <rect x="185" y="19" width="1" height="1" fill="#7dd3fc" class="anim-b" />
+  <rect x="270" y="7" width="1" height="1" fill="#ffffff" class="anim-c" />
+  <rect x="340" y="9" width="1" height="1" fill="#fef08a" class="anim-a" />
+  <rect x="435" y="17" width="1" height="1" fill="#f8fafc" class="anim-d" />
 </svg>
