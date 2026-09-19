@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/stars.svg" width="450" alt="Lo-Fi Pixel Night Sky" />
+  <img src="./assets/stars.svg" width="560" alt="Celestial Night Sky" />
 </p>
 
 # Ilia Popovschii

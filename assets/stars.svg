@@ -1,100 +1,193 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 28" width="450" height="28" fill="none" shape-rendering="crispEdges">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 60" width="600" height="60" fill="none">
   <defs>
-    <!-- 5x5 Pixel Cross Star -->
-    <g id="px-cross">
-      <rect x="2" y="0" width="1" height="5" />
-      <rect x="0" y="2" width="5" height="1" />
+    <!-- Slender Anime/Astronomical Diffraction Starbursts -->
+    <g id="starburst-main">
+      <circle cx="0" cy="0" r="1.5" fill="#ffffff" />
+      <line x1="-9" y1="0" x2="9" y2="0" stroke="#ffffff" stroke-width="0.75" stroke-linecap="round" />
+      <line x1="0" y1="-9" x2="0" y2="9" stroke="#ffffff" stroke-width="0.75" stroke-linecap="round" />
+      <line x1="-4" y1="-4" x2="4" y2="4" stroke="#7dd3fc" stroke-width="0.5" stroke-linecap="round" opacity="0.8" />
+      <line x1="-4" y1="4" x2="4" y2="-4" stroke="#7dd3fc" stroke-width="0.5" stroke-linecap="round" opacity="0.8" />
     </g>
 
-    <!-- 3x3 Pixel Plus Star -->
-    <g id="px-plus">
-      <rect x="1" y="0" width="1" height="3" />
-      <rect x="0" y="1" width="3" height="1" />
+    <g id="starburst-warm">
+      <circle cx="0" cy="0" r="1.4" fill="#fef08a" />
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#fef08a" stroke-width="0.7" stroke-linecap="round" />
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#fef08a" stroke-width="0.7" stroke-linecap="round" />
+      <line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5" stroke="#fde047" stroke-width="0.45" stroke-linecap="round" opacity="0.7" />
+      <line x1="-3.5" y1="3.5" x2="3.5" y2="-3.5" stroke="#fde047" stroke-width="0.45" stroke-linecap="round" opacity="0.7" />
     </g>
+
+    <!-- Diamond Star (Soft 4-point anime diamond) -->
+    <g id="star-diamond">
+      <path d="M 0,-5 Q 0,0 5,0 Q 0,0 0,5 Q 0,0 -5,0 Q 0,0 0,-5 Z" />
+    </g>
+
+    <!-- Faint shooting star gradient -->
+    <linearGradient id="meteorTrail" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="30%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Luminous Moon Gradient -->
+    <linearGradient id="moonShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
 
     <style>
-      /* 16-bit retro discrete frame animations */
-      .anim-a { animation: stepA 2.6s steps(1) infinite; }
-      .anim-b { animation: stepB 3.4s steps(1) infinite; }
-      .anim-c { animation: stepC 2.0s steps(1) infinite; }
-      .anim-d { animation: stepD 4.2s steps(1) infinite; }
+      .shimmer-1 { animation: pulseGlow 3.6s ease-in-out infinite alternate; }
+      .shimmer-2 { animation: pulseGlow 2.7s ease-in-out infinite alternate; }
+      .shimmer-3 { animation: pulseGlow 4.5s ease-in-out infinite alternate; }
+      .shimmer-4 { animation: pulseGlow 2.1s ease-in-out infinite alternate; }
 
-      @keyframes stepA { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.95; } }
-      @keyframes stepB { 0%, 100% { opacity: 0.9; } 45% { opacity: 0.15; } }
-      @keyframes stepC { 0%, 100% { opacity: 0.15; } 60% { opacity: 0.85; } }
-      @keyframes stepD { 0%, 100% { opacity: 0.85; } 50% { opacity: 0.25; } }
+      @keyframes pulseGlow {
+        0% { opacity: 0.25; transform: scale(0.85); }
+        50% { opacity: 0.65; }
+        100% { opacity: 1; transform: scale(1.1); }
+      }
+
+      @keyframes glideMeteor {
+        0% {
+          transform: translate(0, 0) scale(0);
+          opacity: 0;
+        }
+        3% {
+          opacity: 0.95;
+          transform: translate(12px, 5px) scale(1);
+        }
+        12% {
+          opacity: 0;
+          transform: translate(140px, 45px) scale(0.35);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(140px, 45px) scale(0);
+        }
+      }
+      .meteor-anim {
+        animation: glideMeteor 11s ease-out infinite;
+        transform-origin: 0 0;
+      }
+
+      @keyframes moonBreathe {
+        0%, 100% { opacity: 0.88; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.05); }
+      }
+      .moon-glow {
+        animation: moonBreathe 5.5s ease-in-out infinite;
+        transform-origin: 0 0;
+      }
     </style>
   </defs>
 
-  <!-- 100% Transparent Canvas - No borders, no boxes, completely seamless -->
+  <!-- 100% Transparent Canvas - Perfectly Integrated -->
 
-  <!-- Retro Pixel Crescent Moon (16-bit, soft cream) -->
-  <g fill="#fef08a" opacity="0.9" transform="translate(25, 4)">
-    <rect x="3" y="0" width="4" height="2" />
-    <rect x="1" y="2" width="3" height="2" />
-    <rect x="0" y="4" width="2" height="4" />
-    <rect x="1" y="8" width="3" height="2" />
-    <rect x="3" y="10" width="4" height="2" />
+  <!-- Detailed Crescent Moon with Orbital Ring -->
+  <g transform="translate(48, 28)">
+    <g class="moon-glow">
+      <!-- Crescent Moon Body -->
+      <path d="M 4,-12 C -4,-9 -8,-4 -8,3 C -8,10 -4,14 4,16 C -3,13 -5,9 -5,3 C -5,-4 -3,-9 4,-12 Z" fill="url(#moonShine)" />
+      <!-- Tiny companion starlet at crescent cusp -->
+      <circle cx="6" cy="1" r="1.1" fill="#ffffff" opacity="0.9" />
+      <!-- Fine orbital accent ring -->
+      <ellipse cx="-1" cy="2" rx="16" ry="8" stroke="#38bdf8" stroke-width="0.65" stroke-dasharray="2 3" opacity="0.4" transform="rotate(-20)" />
+    </g>
   </g>
 
-  <!-- 5x5 Pixel Cross Stars -->
-  <g class="anim-a" fill="#f8fafc" transform="translate(95, 11)">
-    <use href="#px-cross" />
-    <animate attributeName="opacity" values="0.2;0.95;0.2" dur="2.6s" calcMode="discrete" repeatCount="indefinite" />
+  <!-- Celestial Constellation Arcs (Harmonic waves linking stars) -->
+  <g stroke="#38bdf8" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.28">
+    <path d="M 70,30 Q 110,18 150,26 T 245,22 T 345,32 T 450,20 T 555,28" />
+    <path d="M 70,30 Q 110,42 150,34 T 245,38 T 345,28 T 450,40 T 555,32" opacity="0.18" />
   </g>
 
-  <g class="anim-b" fill="#7dd3fc" transform="translate(225, 9)">
-    <use href="#px-cross" />
-    <animate attributeName="opacity" values="0.9;0.15;0.9" dur="3.4s" calcMode="discrete" repeatCount="indefinite" />
+  <!-- Slender Anime/Astronomical Diffraction Starbursts -->
+  <g class="shimmer-1" style="transform-origin: 150px 26px; animation-delay: 0.2s;">
+    <use href="#starburst-main" x="150" y="26" />
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="3.6s" begin="0.2s" repeatCount="indefinite" />
   </g>
 
-  <g class="anim-c" fill="#fef08a" transform="translate(355, 13)">
-    <use href="#px-cross" />
-    <animate attributeName="opacity" values="0.15;0.85;0.15" dur="2.0s" calcMode="discrete" repeatCount="indefinite" />
+  <g class="shimmer-2" style="transform-origin: 245px 22px; animation-delay: 1.1s;">
+    <use href="#starburst-warm" x="245" y="22" />
+    <animate attributeName="opacity" values="0.25;0.95;0.25" dur="2.7s" begin="1.1s" repeatCount="indefinite" />
   </g>
 
-  <!-- 3x3 Pixel Plus Stars -->
-  <g class="anim-b" fill="#94a3b8" transform="translate(65, 17)">
-    <use href="#px-plus" />
-    <animate attributeName="opacity" values="0.9;0.15;0.9" dur="3.4s" calcMode="discrete" repeatCount="indefinite" />
+  <g class="shimmer-3" style="transform-origin: 380px 18px; animation-delay: 0.6s;">
+    <use href="#starburst-main" x="380" y="18" />
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="4.5s" begin="0.6s" repeatCount="indefinite" />
   </g>
 
-  <g class="anim-d" fill="#f8fafc" transform="translate(155, 7)">
-    <use href="#px-plus" />
-    <animate attributeName="opacity" values="0.85;0.25;0.85" dur="4.2s" calcMode="discrete" repeatCount="indefinite" />
+  <g class="shimmer-1" style="transform-origin: 490px 36px; animation-delay: 1.8s;">
+    <use href="#starburst-warm" x="490" y="36" />
+    <animate attributeName="opacity" values="0.25;0.95;0.25" dur="3.6s" begin="1.8s" repeatCount="indefinite" />
   </g>
 
-  <g class="anim-a" fill="#38bdf8" transform="translate(290, 17)">
-    <use href="#px-plus" />
-    <animate attributeName="opacity" values="0.2;0.95;0.2" dur="2.6s" calcMode="discrete" repeatCount="indefinite" />
+  <!-- Diamond Stars (Soft 4-point anime diamonds) -->
+  <g class="shimmer-2" fill="#7dd3fc" style="transform-origin: 185px 38px; animation-delay: 0.8s;">
+    <use href="#star-diamond" x="185" y="38" />
+    <animate attributeName="opacity" values="0.2;0.95;0.2" dur="2.7s" begin="0.8s" repeatCount="indefinite" />
   </g>
 
-  <g class="anim-c" fill="#f8fafc" transform="translate(415, 9)">
-    <use href="#px-plus" />
-    <animate attributeName="opacity" values="0.15;0.85;0.15" dur="2.0s" calcMode="discrete" repeatCount="indefinite" />
+  <g class="shimmer-4" fill="#f8fafc" style="transform-origin: 345px 32px; animation-delay: 1.5s;">
+    <use href="#star-diamond" x="345" y="32" />
+    <animate attributeName="opacity" values="0.2;0.85;0.2" dur="2.1s" begin="1.5s" repeatCount="indefinite" />
   </g>
 
-  <!-- 2x2 Square Pixel Stars -->
-  <rect x="52" y="9" width="2" height="2" fill="#7dd3fc" class="anim-c">
-    <animate attributeName="opacity" values="0.15;0.85;0.15" dur="2.0s" calcMode="discrete" repeatCount="indefinite" />
-  </rect>
-  <rect x="135" y="12" width="2" height="2" fill="#cbd5e1" class="anim-d">
-    <animate attributeName="opacity" values="0.85;0.25;0.85" dur="4.2s" calcMode="discrete" repeatCount="indefinite" />
-  </rect>
-  <rect x="255" y="13" width="2" height="2" fill="#fef08a" class="anim-a">
-    <animate attributeName="opacity" values="0.2;0.95;0.2" dur="2.6s" calcMode="discrete" repeatCount="indefinite" />
-  </rect>
-  <rect x="325" y="21" width="2" height="2" fill="#94a3b8" class="anim-d">
-    <animate attributeName="opacity" values="0.85;0.25;0.85" dur="4.2s" calcMode="discrete" repeatCount="indefinite" />
-  </rect>
-  <rect x="385" y="7" width="2" height="2" fill="#7dd3fc" class="anim-b">
-    <animate attributeName="opacity" values="0.9;0.15;0.9" dur="3.4s" calcMode="discrete" repeatCount="indefinite" />
-  </rect>
+  <g class="shimmer-3" fill="#fef08a" style="transform-origin: 450px 20px; animation-delay: 0.4s;">
+    <use href="#star-diamond" x="450" y="20" />
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="4.5s" begin="0.4s" repeatCount="indefinite" />
+  </g>
 
-  <!-- 1x1 Single Pixel Micro-Stars -->
-  <rect x="120" y="21" width="1" height="1" fill="#f8fafc" class="anim-a" />
-  <rect x="185" y="19" width="1" height="1" fill="#7dd3fc" class="anim-b" />
-  <rect x="270" y="7" width="1" height="1" fill="#ffffff" class="anim-c" />
-  <rect x="340" y="9" width="1" height="1" fill="#fef08a" class="anim-a" />
-  <rect x="435" y="17" width="1" height="1" fill="#f8fafc" class="anim-d" />
+  <g class="shimmer-2" fill="#7dd3fc" style="transform-origin: 555px 28px; animation-delay: 1.3s;">
+    <use href="#star-diamond" x="555" y="28" />
+    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.7s" begin="1.3s" repeatCount="indefinite" />
+  </g>
+
+  <!-- Delicate Stardust Points (Natural clusters with subtle breathing) -->
+  <circle cx="105" cy="22" r="1.1" fill="#ffffff" class="shimmer-4" style="animation-delay: 0.5s;">
+    <animate attributeName="opacity" values="0.2;0.85;0.2" dur="2.1s" begin="0.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="125" cy="36" r="0.8" fill="#7dd3fc" class="shimmer-1" style="animation-delay: 1.2s;">
+    <animate attributeName="opacity" values="0.15;0.75;0.15" dur="3.6s" begin="1.2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="215" cy="31" r="1.0" fill="#fef08a" class="shimmer-3" style="animation-delay: 0.9s;">
+    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="4.5s" begin="0.9s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="280" cy="18" r="0.9" fill="#ffffff" class="shimmer-2" style="animation-delay: 0.3s;">
+    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.7s" begin="0.3s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="305" cy="38" r="1.2" fill="#7dd3fc" class="shimmer-4" style="animation-delay: 1.6s;">
+    <animate attributeName="opacity" values="0.2;0.85;0.2" dur="2.1s" begin="1.6s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="410" cy="34" r="0.9" fill="#ffffff" class="shimmer-1" style="animation-delay: 0.7s;">
+    <animate attributeName="opacity" values="0.15;0.75;0.15" dur="3.6s" begin="0.7s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="515" cy="20" r="1.1" fill="#fef08a" class="shimmer-3" style="animation-delay: 1.4s;">
+    <animate attributeName="opacity" values="0.25;0.95;0.25" dur="4.5s" begin="1.4s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="575" cy="36" r="0.8" fill="#7dd3fc" class="shimmer-2" style="animation-delay: 0.6s;">
+    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.7s" begin="0.6s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Ambient Micro Stardust -->
+  <g fill="#94a3b8" opacity="0.4">
+    <circle cx="90" cy="32" r="0.5" />
+    <circle cx="165" cy="16" r="0.6" />
+    <circle cx="200" cy="42" r="0.5" />
+    <circle cx="235" cy="37" r="0.5" />
+    <circle cx="265" cy="14" r="0.6" />
+    <circle cx="325" cy="20" r="0.5" />
+    <circle cx="360" cy="40" r="0.5" />
+    <circle cx="390" cy="14" r="0.6" />
+    <circle cx="430" cy="39" r="0.5" />
+    <circle cx="465" cy="16" r="0.5" />
+    <circle cx="530" cy="40" r="0.6" />
+  </g>
+
+  <!-- Ethereal Shooting Star (Slender, needle-fine trail) -->
+  <g class="meteor-anim">
+    <line x1="240" y1="14" x2="195" y2="5" stroke="url(#meteorTrail)" stroke-width="1.2" stroke-linecap="round" />
+    <circle cx="240" cy="14" r="1.1" fill="#ffffff" />
+  </g>
 </svg>
